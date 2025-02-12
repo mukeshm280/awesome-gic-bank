@@ -1,0 +1,22 @@
+<div class="p-4">
+  <h2 class="text-3xl pb-4">Deposit</h2>
+  <mat-form-field class="w-64">
+    <mat-label>Enter amount to deposit</mat-label>
+    <input
+      [(ngModel)]="amount"
+      [min]="1"
+      [max]="100000"
+      type="number"
+      matInput
+      placeholder="Placeholder"
+    />
+    <mat-error
+      >Amount should be in range of {{ MIN_DEPOSIT }} -
+      {{
+        MAX_DEPOSIT | currency : DEFAULT_CURRENCY : "symbol" : "1.0-2"
+      }}</mat-error
+    >
+  </mat-form-field>
+  <button class="m-4" (click)="deposit()" mat-flat-button>Deposit</button>
+  <p>{{ message }}</p>
+</div>

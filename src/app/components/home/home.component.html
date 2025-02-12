@@ -1,0 +1,28 @@
+<section id="home-container" class="p-4 m-4">
+  <h1 class="text-3xl pb-4">
+    Welcome to AwesomeGIC Bank! What would you like to do?
+  </h1>
+  <div class="flex flex-row flex-wrap gap-4">
+    <button routerLink="/deposit" routerLinkActive="active" mat-fab extended>
+      <mat-icon>savings</mat-icon>
+      Deposit
+    </button>
+    <button routerLink="/withdraw" routerLinkActive="active" mat-fab extended>
+      <mat-icon>account_balance_wallet</mat-icon>
+      Withdraw
+    </button>
+    <button
+      routerLink="/print-statement"
+      routerLinkActive="active"
+      mat-fab
+      extended
+    >
+      <mat-icon>receipt_long</mat-icon>
+      Print statement
+    </button>
+    <button (click)="quit()" mat-fab extended>
+      <mat-icon>exit_to_app</mat-icon>
+      Quit
+    </button>
+  </div>
+</section>

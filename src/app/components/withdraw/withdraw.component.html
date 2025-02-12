@@ -1,0 +1,27 @@
+<div class="p-4">
+  <h2 class="text-3xl pb-4">
+    Withdraw : (Available balance:
+    <span class="font-bold">
+      {{ totalBalance | currency : "USD" : "symbol" : "1.0-2" }}</span
+    >)
+  </h2>
+  <mat-form-field class="w-64">
+    <mat-label>Enter amount to withdraw</mat-label>
+    <input
+      [(ngModel)]="amount"
+      type="number"
+      [min]="MIN_WITHDRAW"
+      [max]="MAX_WITHDRAW"
+      matInput
+      placeholder="Placeholder amount"
+    />
+    <mat-error
+      >Amount should be in range of {{ MIN_WITHDRAW }} -
+      {{
+        MAX_WITHDRAW | currency : DEFAULT_CURRENCY : "symbol" : "1.0-2"
+      }}</mat-error
+    >
+  </mat-form-field>
+  <button class="m-4" (click)="withdraw()" mat-flat-button>Withdraw</button>
+  <p class="text-2xl text-amber-700">{{ message }}</p>
+</div>
