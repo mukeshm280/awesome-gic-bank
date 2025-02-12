@@ -4,6 +4,25 @@ LIVE DEMO Link [AwesomeGicBank](https://awesome-gic-bank.web.app/)
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
 
+# Pre-requisite to run this application
+To run this Angular application, ensure you have the following prerequisites installed on your system:
+
+1. **Node.js**: Download and install the latest LTS version of Node.js from [nodejs.org](https://nodejs.org/).
+    ```
+2. **Dependencies**: Clone the repo  and Navigate to the project directory and install the required dependencies:
+    ```bash
+    /awesome-gic-bank
+    npm install
+    ``` 
+3. **Run**: Navigate to the project directory:
+    ```bash
+    /awesome-gic-bank
+    ```bash
+    ng serve
+  ```
+
+    Once the server runs, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+
 ## Development server
 
 To start a local development server, run:
@@ -32,9 +51,6 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 ```bash
 ng test
 ```
-
-
-
 
 ## Problem Statement
 
@@ -121,27 +137,7 @@ Have a nice day!
     MAX_WITHDRAW = 100_000;
     DEFAULT_CURRENCY = 'USD';
 
-# Pre-requisite to run this application
-To run this Angular application, ensure you have the following prerequisites installed on your system:
 
-1. **Node.js**: Download and install the latest LTS version of Node.js from [nodejs.org](https://nodejs.org/).
-2. **Angular CLI**: Install Angular CLI globally using npm:
-    ```bash
-    npm install -g @angular/cli
-    ```
-3. **Dependencies**: Navigate to the project directory and install the required dependencies:
-    ```bash
-    /awesome-gic-bank
-    npm install
-    ```
-3. **Run**: Navigate to the project directory:
-    ```bash
-    /awesome-gic-bank
-    ```bash
-    ng serve
-    ```
-
-    Once the server runs, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
 # Click the below link to see it live deployed on Firebase
     [AwesomeGicBank](https://awesome-gic-bank.web.app/)
