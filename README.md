@@ -1,5 +1,7 @@
 # AwesomeGicBank
 
+LIVE DEMO Link [AwesomeGicBank](https://awesome-gic-bank.web.app/)
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
 
 ## Development server
@@ -106,7 +108,7 @@ Date                  | Amount  | Balance
 ```
 
 ## Quit
-When user chooses to `Quit`, system responds with:
+When a user chooses to `Quit`, the system responds with:
 ```
 Thank you for banking with AwesomeGIC Bank.
 Have a nice day!
@@ -139,9 +141,9 @@ To run this Angular application, ensure you have the following prerequisites ins
     ng serve
     ```
 
-    Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+    Once the server runs, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-# Click below link to see it live deployed on firebase
-    https://awesome-gic-bank.web.app/
+# Click the below link to see it live deployed on Firebase
+    [AwesomeGicBank](https://awesome-gic-bank.web.app/)
 
 
