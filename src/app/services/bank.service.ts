@@ -18,7 +18,7 @@ export class BankService {
    */
   deposit(amount: number): string {
     this.balance += amount;
-    this.addTransaction(amount);
+    this.addTransaction(amount, 'deposit');
     return `Thank you. $${amount.toFixed(
       2
     )} has been deposited to your account.`;
@@ -34,7 +34,7 @@ export class BankService {
       return 'Insufficient funds.';
     }
     this.balance -= amount;
-    this.addTransaction(-amount);
+    this.addTransaction(-amount, 'withdraw');
     return `Thank you. $${amount.toFixed(2)} has been withdrawn.`;
   }
 
@@ -43,18 +43,19 @@ export class BankService {
    * @returns statement : Transaction[]
    */
   getStatement(): Transaction[] {
-    return this.transactions;
+    return this.sortTransactionsByDate(this.transactions);
   }
 
   /**
    * Method to add a transaction to the transaction history
    * @param amount : number
    */
-  private addTransaction(amount: number): void {
+  private addTransaction(amount: number, type: 'deposit' | 'withdraw'): void {
     this.transactions.push({
       date: new Date().toLocaleString(),
       amount: amount,
       balance: this.balance,
+      type: type,
     });
   }
 
@@ -73,5 +74,16 @@ export class BankService {
    */
   openSnackBar(message: string, action: string): void {
     this._snackBar.open(message, action);
+  }
+
+  /**
+   * utility method to sort transactions by date
+   * @param transactions
+   * @returns sorted transactions
+   */
+  sortTransactionsByDate(transactions: Transaction[]): Transaction[] {
+    return transactions.sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
   }
 }

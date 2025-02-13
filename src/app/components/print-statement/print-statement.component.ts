@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { BankService } from '../../services/bank.service';
 import { Transaction } from '../../models/transaction.model';
 import { MatTableModule } from '@angular/material/table';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-print-statement',
@@ -14,7 +14,7 @@ import {MatCardModule} from '@angular/material/card';
 })
 export class PrintStatementComponent {
   transactions: Transaction[] = [];
-  displayedColumns: string[] = ['date', 'amount', 'balance'];
+  displayedColumns: string[] = ['date', 'type', 'amount', 'balance'];
   constructor(private bankService: BankService) {}
 
   ngOnInit(): void {

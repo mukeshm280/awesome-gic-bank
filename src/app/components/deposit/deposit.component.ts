@@ -27,7 +27,7 @@ import {
   styleUrl: './deposit.component.css',
 })
 export class DepositComponent {
-  amount: number = 1;
+  amount: number | null = null;
   message: string = '';
   readonly MIN_DEPOSIT = MIN_DEPOSIT;
   readonly MAX_DEPOSIT = MAX_DEPOSIT;
@@ -39,7 +39,11 @@ export class DepositComponent {
    * @returns void
    */
   deposit(): void {
-    if (this.amount < MIN_DEPOSIT || this.amount > MAX_DEPOSIT) {
+    if (
+      !this.amount ||
+      this.amount < MIN_DEPOSIT ||
+      this.amount > MAX_DEPOSIT
+    ) {
       this.bankService.openSnackBar('Please enter a valid amount', 'Close');
       return;
     }

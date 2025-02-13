@@ -26,7 +26,7 @@ import {
   styleUrl: './withdraw.component.css',
 })
 export class WithdrawComponent implements OnInit {
-  amount: number = 1;
+  amount: number | null = null;
   message: string = '';
   totalBalance: number = 0;
 
@@ -45,7 +45,11 @@ export class WithdrawComponent implements OnInit {
    * @returns void
    */
   withdraw(): void {
-    if (this.amount < MIN_WITHDRAW || this.amount > MAX_WITHDRAW) {
+    if (
+      !this.amount ||
+      this.amount < MIN_WITHDRAW ||
+      this.amount > MAX_WITHDRAW
+    ) {
       this.bankService.openSnackBar('Please enter a valid amount', 'Close');
       return;
     }
