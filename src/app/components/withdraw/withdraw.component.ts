@@ -54,7 +54,7 @@ export class WithdrawComponent implements OnInit {
       return;
     }
     this.message = this.bankService.withdraw(this.amount);
-    this.amount = 1;
+    this.amount = null;
     this.getBalance();
   }
 

@@ -48,6 +48,6 @@ export class DepositComponent {
       return;
     }
     this.message = this.bankService.deposit(this.amount);
-    this.amount = 1;
+    this.amount = null;
   }
 }
